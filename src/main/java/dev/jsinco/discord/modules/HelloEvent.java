@@ -3,6 +3,7 @@ package dev.jsinco.discord.modules;
 import dev.jsinco.discord.framework.events.ListenerModule;
 import dev.jsinco.discord.framework.logging.FrameWorkLogger;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.session.ReadyEvent;
 import net.dv8tion.jda.api.hooks.SubscribeEvent;
 
 public class HelloEvent implements ListenerModule {
@@ -19,5 +20,10 @@ public class HelloEvent implements ListenerModule {
             event.getChannel().sendMessage("Hello " + event.getAuthor().getName() + "!").queue();
             FrameWorkLogger.info("Message content: " + messageContent);
         }
+    }
+
+    @SubscribeEvent
+    public void onJdaReady(ReadyEvent event) {
+        FrameWorkLogger.info("JDA is ready!");
     }
 }

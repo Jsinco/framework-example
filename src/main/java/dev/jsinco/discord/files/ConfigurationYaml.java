@@ -15,5 +15,8 @@ public class ConfigurationYaml extends AbstractOkaeriConfig {
         return INSTANCE;
     }
 
+
     public String someValue = "Hello, World!";
+
+    public boolean someBoolean = true;
 }

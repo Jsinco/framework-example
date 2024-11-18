@@ -8,6 +8,7 @@ import java.io.IOException;
 
 // Need a custom Gson TypeAdapter for this object? No problem! Just make sure to annotate your object with @TypeAdapter!
 public class ExampleObjectTypeAdapter extends TypeAdapter<ExampleObject> {
+
     @Override
     public void write(JsonWriter out, ExampleObject value) throws IOException {
         out.beginObject();

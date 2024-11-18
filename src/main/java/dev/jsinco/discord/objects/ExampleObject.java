@@ -22,4 +22,13 @@ public class ExampleObject {
     public int getAge() {
         return age;
     }
+
+    @Override
+    public String
+    toString() {
+        return "ExampleObject{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
