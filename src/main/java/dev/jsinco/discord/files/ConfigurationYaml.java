@@ -1,6 +1,7 @@
 package dev.jsinco.discord.files;
 
 import dev.jsinco.discord.framework.settings.AbstractOkaeriConfig;
+import eu.okaeri.configs.OkaeriConfig;
 import eu.okaeri.configs.annotation.Exclude;
 
 // Make your own config using Okaeri!
@@ -19,4 +20,13 @@ public class ConfigurationYaml extends AbstractOkaeriConfig {
     public String someValue = "Hello, World!";
 
     public boolean someBoolean = true;
+
+    public TestSection testSection = new TestSection();
+
+    public static class TestSection extends OkaeriConfig {
+
+            public String someValue = "Hello, World!";
+
+            public boolean someBoolean = true;
+    }
 }
