@@ -17,8 +17,7 @@ public class Main {
 
     public static void main(String[] args) {
         // Start our FrameWork using all FrameWork defaults. All we need to provide is our caller class, so this class.
-        Path path = Path.of("C:\\Users\\jonah\\idea\\framework-example\\build\\libs\\test");
-        FrameWork.start(Main.class, path);
+        FrameWork.start(Main.class);
 
         // Register our custom console command
         ConsoleCommandManager.getInstance()
@@ -26,10 +25,6 @@ public class Main {
 
         // set our own JDA presence
         jda.getPresence().setActivity(Activity.playing("With Jsinco/jda-framework"));
-
-        ConfigurationYaml.getInstance().testSection.someBoolean = false;
-        ConfigurationYaml.getInstance().save();
-
     }
 
 }
