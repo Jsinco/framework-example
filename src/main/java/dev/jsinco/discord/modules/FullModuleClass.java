@@ -9,6 +9,7 @@ import dev.jsinco.discord.framework.scheduling.TimeUnit;
 import dev.jsinco.discord.framework.util.Module;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.session.ReadyEvent;
 import net.dv8tion.jda.api.hooks.SubscribeEvent;
 
 // Module class includes CommandModule and ListenerModule
@@ -33,5 +34,10 @@ public class FullModuleClass extends Tickable implements Module {
         if (event.getMessage().getContentRaw().equals("!test")) {
             event.getChannel().sendMessage("This is a test message").queue();
         }
+    }
+
+    @SubscribeEvent
+    public void onEnable(ReadyEvent event) {
+        System.out.println("This is a test onEnable");
     }
 }
