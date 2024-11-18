@@ -2,7 +2,9 @@ package dev.jsinco.discord.modules;
 
 // A module class that includes every available module
 
+import dev.jsinco.discord.framework.FrameWork;
 import dev.jsinco.discord.framework.commands.DiscordCommand;
+import dev.jsinco.discord.framework.logging.FrameWorkLogger;
 import dev.jsinco.discord.framework.scheduling.Tick;
 import dev.jsinco.discord.framework.scheduling.Tickable;
 import dev.jsinco.discord.framework.scheduling.TimeUnit;
@@ -38,6 +40,6 @@ public class FullModuleClass extends Tickable implements Module {
 
     @SubscribeEvent
     public void onEnable(ReadyEvent event) {
-        System.out.println("This is a test onEnable");
+        FrameWorkLogger.info("Module enabled" + event.getJDA().getSelfUser().getName());
     }
 }
